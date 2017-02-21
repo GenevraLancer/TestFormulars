@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tableActions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.otr.ru/sufd/document/table-actions" xsi:schemaLocation="http://www.otr.ru/sufd/document/table-actions http://ufos.otr.ru/schema/document/table-actions/v1/table-actions.xsd">
+  <action icon="add_line.png" id="footer_set_new_str_rub" tooltip="Добавить новую строку" enabled-states="browse,modified,normal" disabling-action="hide">
+    <proc method="createTableRow" object="funcSubDocAction">
+      <param name="table">FS_RUB_FINSOURC200_LIST</param>
+    </proc>
+    <comment>Добавить новую строку RUB</comment>
+  </action>
+  <action icon="delete_line.png" id="footer_delete_str_rub" tooltip="Удалить строку" enabled-states="browse,modified,normal" disabling-action="hide">
+    <proc method="deleteFieldFromTable" object="selectedFields">
+      <param name="tableName">FS_RUB_FINSOURC200_LIST</param>
+      <param name="componentId">itr_fs_rub_finsourc_list</param>
+      <param name="confirmation">false</param>
+    </proc>
+    <comment>Удалить строку RUB</comment>
+  </action>
+  <action icon="copy.png" id="footer_set_copy_str_rub" tooltip="Создать копию строки" enabled-states="browse,modified,normal" disabling-action="hide">
+    <proc method="invoke" object="addRowAndCopyFieldsFromIterator">
+      <param name="componentId">itr_fs_rub_finsourc_list</param>
+      <param name="table">FS_RUB_FINSOURC200_LIST</param>
+      <param name="mapping">PUBLISHYEAR::=PUBLISHYEAR;ADDITIONALFEATURECODE::=ADDITIONALFEATURECODE;RUR_SUMCURRENT::=RUR_SUMCURRENT;RUR_SUMFIRST::=RUR_SUMFIRST;RUR_SUMNEXT::=RUR_SUMNEXT;RUR_SUMSEC::=RUR_SUMSEC;RUR_SUMSUBSEC::=RUR_SUMSUBSEC;RUR_SUMTOTAL::=RUR_SUMTOTAL;KS_ACTION::=KS_ACTION;KS_DEPARTMENT::=KS_DEPARTMENT;KS_DIRECTION::=KS_DIRECTION;KS_EXPTYPE::=KS_EXPTYPE;KS_GRBS::=KS_GRBS;KS_KBK::=KS_KBK;KS_PNDE::=KS_PNDE;KS_PROGRAM::=KS_PROGRAM;KS_SECTION::=KS_SECTION;KS_SUBSECTION::=KS_SUBSECTION;RUZ_SUMCURRENT::=RUZ_SUMCURRENT;RUZ_SUMFIRST::=RUZ_SUMFIRST;RUZ_SUMNEXT::=RUZ_SUMNEXT;RUZ_SUMSEC::=RUZ_SUMSEC;RUZ_SUMSUBSEC::=RUZ_SUMSUBSEC;RUZ_SUMTOTAL::=RUZ_SUMTOTAL;CRUZ_TOTAL::=CRUZ_TOTAL;CRUZ_SUBSEC::=CRUZ_SUBSEC;CRUZ_SEC::=CRUZ_SEC;CRUZ_NEXT::=CRUZ_NEXT;CRUZ_FIRST::=CRUZ_FIRST;CRUZ_CURR::=CRUZ_CURR;CRCT_CURR::=CRCT_CURR;CRCT_FIRST::=CRCT_FIRST;CRCT_NEXT::=CRCT_NEXT;CRCT_SEC::=CRCT_SEC;CRCT_SUBSEC::=CRCT_SUBSEC;CRCT_TOTAL::=CRCT_TOTAL;INFORMACTCODE::=INFORMACTCODE;INFORMACTNAME::=INFORMACTNAME;INFORMACTPRIORITY::=INFORMACTPRIORITY;INFORMACTTYPE::=INFORMACTTYPE</param>
+    </proc>
+    <comment>Создать копию строки RUB</comment>
+  </action>
   <actionList id="tableActions">
     <separator/>
     <stdactionref id="add"/>
@@ -30,6 +52,9 @@
   <actionList id="fs_rub_finsourc200_list">
     <stdactionref id="moveUp" disabling-action="hide"/>
     <stdactionref id="moveDown" disabling-action="hide"/>
+    <actionref id="footer_set_new_str_rub"/>
+    <actionref id="footer_delete_str_rub"/>
+    <actionref id="footer_set_copy_str_rub"/>
   </actionList>
   <specific-disable-conditions>
     <disable actionName="copy">

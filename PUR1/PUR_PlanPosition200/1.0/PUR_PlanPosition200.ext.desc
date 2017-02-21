@@ -309,22 +309,14 @@
     <table desc="Финансовое обеспечение по КБК в валюте" id="FS_TI_FINBYKBKCUR_LIST" type="FS_TI_FINBYKBKCUR_LIST"/>
     <table desc="Согласование" id="FS_AGR_AGRLIST_LIST" type="FS_AGR_AGRLIST_LIST"/>
     <nested-fieldset desc="Документ" id="DOC">
-      <field desc="Номер документа" id="CU_DOCNUMBER" length="100" type="STRING">
-        <common ref-id="Pur_PlanPositions" field-id="CU_DOCNUMBER"/>
-      </field>
-      <field desc="Дата укрупненной закупки" id="CU_CREATEDATE" type="DATE">
-        <common ref-id="Pur_PlanPositions" field-id="CU_CREATEDATE"/>
-      </field>
-      <field desc="Плановый период" id="CU_PLANPERIOD" length="2000" type="STRING">
-        <common ref-id="Pur_PlanPositions" field-id="CU_PLANPERIOD"/>
-      </field>
+      <field desc="Номер документа" id="CU_DOCNUMBER" length="100" type="STRING"/>
+      <field desc="Дата укрупненной закупки" id="CU_CREATEDATE" type="DATE"/>
+      <field desc="Плановый период" id="CU_PLANPERIOD" length="2000" type="STRING"/>
       <field desc="Актуальный плановый период" id="CU_ACTUALPLANPERIOD" type="BOOLEAN"/>
       <field desc="Тип укрупненной закупки" id="CU_TYPEPURCHASE" length="250" type="ENUM">
         <param name="enumeration-id" value="PUR_TypePurchase"/>
       </field>
-      <field desc="Номер версии укрупненной закупки" id="CU_VERSIONNUM" length="100" type="STRING">
-        <common ref-id="Pur_PlanPositions" field-id="CU_VERSIONNUM"/>
-      </field>
+      <field desc="Номер версии укрупненной закупки" id="CU_VERSIONNUM" length="100" type="STRING"/>
       <field desc="Дата и время создания версии документа" id="CU_VERSCREATEDATE" type="DATETIME"/>
       <field desc="Код организации" id="ORG_ORGCODE" length="200" type="STRING"/>
       <field desc="ОГРН" id="ORG_OGRN" length="13" type="STRING"/>
@@ -360,9 +352,7 @@
       <field desc="Телефон организации пользователя" id="ORG_USERORGPHONE" length="100" type="STRING"/>
       <field desc="Емэйл организации пользователя" id="ORG_USERORGEMAIL" length="100" type="STRING"/>
       <field desc="Код СПЗ пользователя" id="ORG_SPZ" length="11" type="STRING"/>
-      <field desc="Наименование объекта закупки" id="BI_OBJECTINFO" length="2000" type="STRING">
-        <common ref-id="Pur_PlanPositions" field-id="BI_OBJECTINFO"/>
-      </field>
+      <field desc="Наименование объекта закупки" id="BI_OBJECTINFO" length="2000" type="STRING"/>
       <field desc="Код товара работы или услуги" id="OKPD_CODOKPD" length="20" type="STRING"/>
       <field desc="Наименование товара работы или услуги" id="OKPD_OKPD" length="1000" type="STRING"/>
       <field desc="Закупка содержит несколько ОКПД2" id="BI_SEVERALOKPD" type="BOOLEAN"/>
@@ -378,7 +368,6 @@
       <field desc="Обоснование соответствия" id="BI_FOUNDATION" type="TEXT"/>
       <field desc="Текущий финансовый год" id="BI_PLANPERIOD_CURYEAR" length="250" type="ENUM">
         <param name="enumeration-id" value="PublishYear"/>
-        <common ref-id="Pur_PlanPositions" field-id="BI_PLANPERIOD_NEXTYEAR"/>
       </field>
       <field desc="Очередной финансовый год" id="BI_PLANPERIOD_NEXTYEAR" length="250" type="ENUM">
         <param name="enumeration-id" value="PublishYear"/>
