@@ -390,6 +390,73 @@
       </actions>
     </condition>
     <condition>
+      <and>
+        <or>
+          <eq name="docState.systemName" value="CREATED"/>
+          <eq name="docState.systemName" value="draft"/>
+        </or>
+      </and>
+      <comment>Показать кнопки добавить и скопировать строку итератора </comment>
+      <actions>
+        <show component="btn_set_new_str"/>
+        <hide component="btn_set_copy_str"/>
+        <show component="btn_set_new_str_cur"/>
+        <hide component="btn_set_copy_str_cur"/>
+      </actions>
+    </condition>
+    <condition>
+      <or>
+        <and>
+          <not>
+            <eq name="docState.systemName" value="CREATED"/>
+          </not>
+          <not>
+            <eq name="docState.systemName" value="draft"/>
+          </not>
+        </and>
+      </or>
+      <comment>Скрыть кнопки добавить и скопировать строку итератора</comment>
+      <actions>
+        <hide component="btn_set_new_str"/>
+        <hide component="btn_set_copy_str"/>
+        <hide component="btn_set_new_str_cur"/>
+        <hide component="btn_set_copy_str_cur"/>
+      </actions>
+    </condition>
+    <condition>
+      <and>
+        <not>
+          <eq name="DOC.IND_WASPUBLISHER" value="true" type="BOOLEAN"/>
+        </not>
+        <or>
+          <eq name="docState.systemName" value="CREATED"/>
+          <eq name="docState.systemName" value="draft"/>
+        </or>
+      </and>
+      <comment>Показать кнопку удалить строку итератора</comment>
+      <actions>
+        <show component="btn_delete_str"/>
+        <show component="btn_delete_str_cur"/>
+      </actions>
+    </condition>
+    <condition>
+      <or>
+        <and>
+          <not>
+            <eq name="docState.systemName" value="CREATED"/>
+          </not>
+          <not>
+            <eq name="docState.systemName" value="draft"/>
+          </not>
+        </and>
+      </or>
+      <comment>Скрыть кнопку удалить строку итератора</comment>
+      <actions>
+        <hide component="btn_delete_str"/>
+        <hide component="btn_delete_str_cur"/>
+      </actions>
+    </condition>
+    <condition>
       <null name="DOC.CU_UZNUMBER"/>
       <comment>Разрешить редактирование Радиогруппы STAFFPURCHASESTYPE</comment>
       <actions>

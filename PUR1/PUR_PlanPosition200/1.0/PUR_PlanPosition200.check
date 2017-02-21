@@ -1008,13 +1008,6 @@
       <param name="otherDocFilter" type="string">fields.DICT.CODE = 'ПЗ.001'</param>
       <param name="curDocFieldToOtherDocFieldMapping" type="string">DOC.BI_REASONFORCHANGEID::=DICT.TEXT_VALUE</param>
     </check>
-    <check beanName="linkedDocsCheckWithNullFilters" desc="ПЗ связанный по Коду организации и плановому периоду не размещен" id="PZWasPublishedEIS" methodName="invoke">
-      <param name="doc.0.docTypeName" type="string">PUR_PurchasePlan</param>
-      <param name="doc.0.searchFilter" type="string">fields.DOC.CUST_ORGCODE = :ORG_ORGCODE or fields.DOC.ORGA_ORGCODE = :ORG_USERORGCODE and fields.DOC.BI_PLAN_PERIOD = :CU_PLANPERIOD</param>
-      <param name="doc.0.checkFilter" type="string">fields.DOC.BI_EISDOCNUMBER != 'ПУСТО''</param>
-      <param name="doc.0.:ORG_ORGCODE" type="string">DOC.ORG_ORGCODE</param>
-      <param name="doc.0.:CU_PLANPERIOD" type="string">DOC.CU_PLANPERIOD</param>
-    </check>
     <conditions/>
   </checkGroup>
   <checkGroup desc="Проверки согласования" id="agreement">
@@ -2005,13 +1998,6 @@
           </condition-not>
         </condition-and>
       </conditions>
-      <strict defaultLevel="WARNING"/>
-      <operations types="SAVE,PUR_SendToApprove"/>
-    </check>
-    <check beanName="fieldCheck" desc="АК_0043 Контроль заполнения блока «Обоснование внесения изменений» в ППЗ, в случае, если отсутствует размещенный ПЗ (для данного планового периода и для данной организации)" id="ReasonBlockNotEmpty" methodName="groupMustBeNotEmpty">
-      <param name="listFields" type="string">DOC.BI_REASONFORCHANGE;DOC.BI_INFOABOUTCHANGE;DOC.BI_CANCEL</param>
-      <param name="errorMsg" type="string">ErrorText</param>
-      <errorText id="ErrorText">Вкладка «Общие сведения»: для позиции заполнен раздел «Обоснование внесения изменений». План закупок не размещался в ЕИС, следовательно, обоснование изменений заполнять не требуется. Уведомляем, что в ЕИС информация об обосновании внесения изменений по таким позициям не будет отображаться.</errorText>
       <strict defaultLevel="WARNING"/>
       <operations types="SAVE,PUR_SendToApprove"/>
     </check>

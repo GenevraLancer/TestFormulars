@@ -1,27 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tableActions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.otr.ru/sufd/document/table-actions" xsi:schemaLocation="http://www.otr.ru/sufd/document/table-actions http://ufos.otr.ru/schema/document/table-actions/v1/table-actions.xsd">
-  <action icon="add_line.png" id="footer_set__new_str_cur" tooltip="Добавить новую строку" enabled-states="browse,modified,normal" disabling-action="hide">
-    <proc method="createTableRow" object="funcSubDocAction">
-      <param name="table">FS_CUR_FINSOURC200_LIST</param>
-    </proc>
-    <comment>Добавить новую строку CUR</comment>
-  </action>
-  <action icon="delete_line.png" id="footer_delete_str_cur" tooltip="Удалить строку" enabled-states="browse,modified,normal" disabling-action="hide">
-    <proc method="deleteFieldFromTable" object="selectedFields">
-      <param name="tableName">FS_CUR_FINSOURC200_LIST</param>
-      <param name="componentId">itr_fs_cur_finsourcescur_list</param>
-      <param name="confirmation">false</param>
-    </proc>
-    <comment>Удалить строку CUR</comment>
-  </action>
-  <action icon="copy.png" id="footer_set_copy_str_cur" tooltip="Создать копию строки" enabled-states="browse,modified,normal" disabling-action="hide">
-    <proc method="invoke" object="addRowAndCopyFieldsFromIterator">
-      <param name="componentId">itr_fs_cur_finsourcescur_list</param>
-      <param name="table">FS_CUR_FINSOURC200_LIST</param>
-      <param name="mapping">ADDITIONALFEATURECODE::=ADDITIONALFEATURECODE;USD_SUMCURRENT::=USD_SUMCURRENT;USD_SUMFIRST::=USD_SUMFIRST;USD_SUMNEXT::=USD_SUMNEXT;USD_SUMSEC::=USD_SUMSEC;USD_SUMSUBSEC::=USD_SUMSUBSEC;USD_SUMTOTAL::=USD_SUMTOTAL;RUR_SUMCURRENT::=RUR_SUMCURRENT;RUR_SUMFIRST::=RUR_SUMFIRST;RUR_SUMNEXT::=RUR_SUMNEXT;RUR_SUMSEC::=RUR_SUMSEC;RUR_SUMSUBSEC::=RUR_SUMSUBSEC;RUR_SUMTOTAL::=RUR_SUMTOTAL;CUR_SUMCURRENT::=CUR_SUMCURRENT;CUR_SUMFIRST::=CUR_SUMFIRST;CUR_SUMNEXT::=CUR_SUMNEXT;CUR_SUMSEC::=CUR_SUMSEC;CUR_SUMSUBSEC::=CUR_SUMSUBSEC;CUR_SUMTOTAL::=CUR_SUMTOTAL;PUBLISHYEAR::=PUBLISHYEAR;KCR_ACTION::=KCR_ACTION;KCR_DEPARTMENT::=KCR_DEPARTMENT;KCR_DIRECTION::=KCR_DIRECTION;KCR_EXPTYPE::=KCR_EXPTYPE;KCR_GRBS::=KCR_GRBS;KCR_KBK::=KCR_KBK;KCR_PNDE::=KCR_PNDE;KCR_PROGRAM::=KCR_PROGRAM;KCR_SECTION::=KCR_SECTION;KCR_SUBSECTION::=KCR_SUBSECTION;OKV_CODE::=OKV_CODE;OKV_CODEABC::=OKV_CODEABC;OKV_NAME::=OKV_NAME;CRCT_CURR::=CRCT_CURR;CRCT_FIRST::=CRCT_FIRST;CRCT_NEXT::=CRCT_NEXT;CRCT_SEC::=CRCT_SEC;CRCT_SUBSEC::=CRCT_SUBSEC;CRCT_TOTAL::=CRCT_TOTAL;CRUZ_CURR::=CRUZ_CURR;CRUZ_FIRST::=CRUZ_FIRST;CRUZ_NEXT::=CRUZ_NEXT;CRUZ_SEC::=CRUZ_SEC;CRUZ_SUBSEC::=CRUZ_SUBSEC;CRUZ_TOTAL::=CRUZ_TOTAL</param>
-    </proc>
-    <comment>Создать копию строки CUR</comment>
-  </action>
   <actionList id="tableActions">
     <separator/>
     <stdactionref id="add"/>
@@ -51,9 +29,6 @@
   <actionList id="fs_cur_finsourc200_list">
     <stdactionref id="moveUp"/>
     <stdactionref id="moveDown"/>
-    <actionref id="footer_set__new_str_cur"/>
-    <actionref id="footer_delete_str_cur"/>
-    <actionref id="footer_set_copy_str_cur"/>
   </actionList>
   <actionList id="&lt;absent>"/>
   <specific-disable-conditions>
